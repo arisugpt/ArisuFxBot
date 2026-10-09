@@ -13,7 +13,7 @@ import os
 # ===========================================================================
 # You can edit this file in any text editor (Notepad, nano, vim, Acode on Android)
 # Enter the token you received from Telegram's @BotFather between the quotes:
-DEFAULT_BOT_TOKEN = "8703437486:AAGqC1YHXILlXglaW5kD57qNMv8-OPriwWc"
+DEFAULT_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
 
 # If environment variable BOT_TOKEN is set, it will take precedence:
 BOT_TOKEN = os.environ.get("BOT_TOKEN", DEFAULT_BOT_TOKEN).strip()
