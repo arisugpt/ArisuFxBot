@@ -13,13 +13,16 @@ import json
 import time
 import shutil
 
-# Ensure UTF-8 output encoding for console across all OS (Windows, Linux, Termux)
-if sys.platform == "win32":
-    try:
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-    except Exception:
-        pass
+# Ensure UTF-8 output encoding and line buffering for console across all OS
+try:
+    if sys.platform == "win32":
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
+    else:
+        sys.stdout.reconfigure(line_buffering=True)
+        sys.stderr.reconfigure(line_buffering=True)
+except Exception:
+    pass
 
 import telebot
 from telebot import types
@@ -37,10 +40,10 @@ from session_manager import SessionManager, UserSession
 
 # Initialize Bot & Session Manager
 if not BOT_TOKEN or BOT_TOKEN == "YOUR_TELEGRAM_BOT_TOKEN_HERE":
-    print("=" * 60)
-    print("[-] ERROR: BOT_TOKEN is not set!")
-    print("[-] Please edit 'config.py' or 'bot.py' and enter your bot token.")
-    print("=" * 60)
+    print("=" * 60, flush=True)
+    print("[-] ERROR: BOT_TOKEN is not set!", flush=True)
+    print("[-] Please edit 'config.py' or 'bot.py' and enter your bot token.", flush=True)
+    print("=" * 60, flush=True)
     sys.exit(1)
 
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode=None)
@@ -51,7 +54,7 @@ def log_action(tag: str, user_id: int, username: str = "", message: str = ""):
     """Print structured, real-time live logs to console"""
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
     uname = f"@{username}" if username else "NoUsername"
-    print(f"[{timestamp}] [{tag}] [User: {user_id} | {uname}] {message}")
+    print(f"[{timestamp}] [{tag}] [User: {user_id} | {uname}] {message}", flush=True)
 
 
 # ===========================================================================
@@ -833,24 +836,24 @@ def handle_text_messages(message):
 # ===========================================================================
 
 if __name__ == "__main__":
-    print("=" * 65)
-    print("      🚀 ARISUFXBOT - UNITY ASSETBUNDLE TELEGRAM BOT")
-    print(f"      👑 Developed & Created by: {AUTHOR}")
-    print(f"      📢 Official Telegram Channel: {TELEGRAM_CHANNEL}")
-    print(f"      ⏱️ Inactive Session Purge: Every {SESSION_TIMEOUT_SECONDS // 60} minutes")
-    print("=" * 65)
-    print("[*] Testing Telegram Bot API connection...")
+    print("=" * 65, flush=True)
+    print("      🚀 ARISUFXBOT - UNITY ASSETBUNDLE TELEGRAM BOT", flush=True)
+    print(f"      👑 Developed & Created by: {AUTHOR}", flush=True)
+    print(f"      📢 Official Telegram Channel: {TELEGRAM_CHANNEL}", flush=True)
+    print(f"      ⏱️ Inactive Session Purge: Every {SESSION_TIMEOUT_SECONDS // 60} minutes", flush=True)
+    print("=" * 65, flush=True)
+    print("[*] Testing Telegram Bot API connection...", flush=True)
     
     try:
         me = bot.get_me()
-        print(f"[+] Connected to Telegram successfully as @{me.username} ({me.first_name})!")
-        print(f"[+] Bot ID: {me.id}")
+        print(f"[+] Connected to Telegram successfully as @{me.username} ({me.first_name})!", flush=True)
+        print(f"[+] Bot ID: {me.id}", flush=True)
         
         # Remove any existing webhook so long polling works cleanly
         bot.delete_webhook(drop_pending_updates=True)
-        print("[+] Webhook cleared. Ready for polling updates!")
-        print("[*] Listening for user messages, uploads, and button clicks...")
-        print("=" * 65)
+        print("[+] Webhook cleared. Ready for polling updates!", flush=True)
+        print("[*] Listening for user messages, uploads, and button clicks...", flush=True)
+        print("=" * 65, flush=True)
         bot.infinity_polling(timeout=20, long_polling_timeout=20)
     except KeyboardInterrupt:
         print("\n[!] Shutting down ArisuFxBot gracefully...")
