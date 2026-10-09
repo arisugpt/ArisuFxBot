@@ -19,7 +19,7 @@ Powered by **[ArisuFxPy](https://github.com/arisugpt/ArisuFxPy)**.
 
 ## 🌟 Key Features
 
-- 📋 **Asset Hierarchy & Info Table**: Extract all Path IDs, Class Types, Asset Names, and byte sizes into a clean, searchable table document (`.txt`).
+- 📋 **Asset Hierarchy & Info Table**: Extract all Path IDs, Class Types, Asset Names (with `Unnamed Asset` fallback), and byte sizes into a clean, searchable table document (`.txt`).
 - 📤 **TypeTree Dump Export**: Dump asset data hierarchies into human-readable `.txt` or `.json` formats.
 - 📥 **TypeTree Dump Import & Patching**: Upload edited JSON/Text dumps to instantly patch game assets.
 - 📦 **Raw Data Extraction & Injection**: Export raw asset binaries (`.dat`) or inject custom modified payloads.
@@ -27,21 +27,6 @@ Powered by **[ArisuFxPy](https://github.com/arisugpt/ArisuFxPy)**.
 - 🔢 **Hex Padding (0x00 Null Byte Injector)**: Pad any modified file to an exact target byte size with `0x00` null bytes and automatic size verification.
 - 🧹 **Automatic Inactivity Cleanup**: Sweeps user memory and purges temporary disk files after **10 minutes** of inactivity to keep your Termux / VPS lightweight.
 - 📊 **Real-Time Console Logs**: Live terminal logging for all user interactions, button clicks, file uploads, and modding operations.
-
----
-
-## 👑 Credits & Authorship
-
-> **All credit for this bot, concept, and implementation belongs entirely to:**
-> 
-> - **Creator & Developer:** **ArisuGpt**
-> - **Official Telegram Channel:** [@hackinjectlab](https://t.me/hackinjectlab)
-
----
-
-## ⚠️ Educational & Research Disclaimer
-
-> **Notice:** This tool and Telegram Bot are developed strictly for **educational, security research, and reverse-engineering study purposes**. The authors do not condone, encourage, or take responsibility for unauthorized use or modification of proprietary files. Always ensure you have legal authorization to analyze target assets.
 
 ---
 
@@ -55,7 +40,7 @@ If you want to upgrade this bot with advanced media extraction features (such as
 - 🧊 **3D Meshes**: Use `classes.Mesh` to parse vertices, faces, and export 3D `.obj` models.
 
 > 📖 **Want to learn more & view full class references?**  
-> To explore the class structures, methods, and complete code samples, you must visit and read our official core library repository:  
+> To explore class structures, methods, and complete code samples, you must visit and read our official core library repository:  
 > 👉 **[Visit ArisuFxPy on GitHub](https://github.com/arisugpt/ArisuFxPy)**
 
 ---
@@ -229,15 +214,76 @@ sudo journalctl -u arisufxbot -f
 
 ---
 
-## 📜 License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
----
+<br>
 
 <div align="center">
 
-**Developed with ❤️ by ArisuGpt**  
-*Join our official Telegram community: [@hackinjectlab](https://t.me/hackinjectlab)*
+```
+╭────────────────────────────────────────────────────────────────────────╮
+│                                                                        │
+│                  👑  𝐂 𝐑 𝐄 𝐃 𝐈 𝐓 𝐒  &  𝐀 𝐔 𝐓 𝐇 𝐎 𝐑 𝐒 𝐇 𝐈 𝐏               │
+│                                                                        │
+╰────────────────────────────────────────────────────────────────────────╯
+```
+
+### 👑 𝐂𝐫𝐞𝐝𝐢𝐭𝐬 & 𝐀𝐮𝐭𝐡𝐨𝐫𝐬𝐡𝐢𝐩
+
+| 👤 **Architect & Lead Developer** | 📢 **Official Channel & Hub** |
+| :---: | :---: |
+| **`ArisuGpt`** | [**@hackinjectlab**](https://t.me/hackinjectlab) |
+
+> 💎 *100% Concept, Modding Logic, Termux/VPS Port & Architecture originally created by **ArisuGpt**.*  
+> 🔗 *Join the official channel for exclusive modding scripts, tools & updates:* [**t.me/hackinjectlab**](https://t.me/hackinjectlab)
+
+<br>
+
+```
+╭────────────────────────────────────────────────────────────────────────╮
+│                                                                        │
+│                          📜  𝐋 𝐈 𝐂 𝐄 𝐍 𝐒 𝐄                             │
+│                                                                        │
+╰────────────────────────────────────────────────────────────────────────╯
+```
+
+### 📜 𝐋𝐢𝐜𝐞𝐧𝐬𝐞
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-F5A623.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+
+```text
+⚖️ Copyright (c) 2026 ArisuGpt (@hackinjectlab)
+
+This project is licensed under the MIT License.
+Permission is hereby granted to use, inspect, fork, and adapt for research.
+```
+
+<br>
+
+```
+╭────────────────────────────────────────────────────────────────────────╮
+│                                                                        │
+│       ⚠️  𝐄 𝐃 𝐔 𝐂 𝐀 𝐓 𝐈 𝐎 𝐍 𝐀 𝐋  &  𝐑 𝐄 𝐒 𝐄 𝐀 𝐑 𝐂 𝐇  𝐃 𝐈 𝐒 𝐂 𝐋 𝐀 𝐈 𝐌 𝐄 𝐑       │
+│                                                                        │
+╰────────────────────────────────────────────────────────────────────────╯
+```
+
+### ⚠️ 𝐄𝐝𝐮𝐜𝐚𝐭𝐢𝐨𝐧𝐚𝐥 & 𝐑𝐞𝐬𝐞𝐚𝐫𝐜𝐡 𝐃𝐢𝐬𝐜𝐥𝐚𝐢𝐦𝐞𝐫
+
+</div>
+
+> [!CAUTION]
+> #### 🛑 FOR EDUCATIONAL, SECURITY AUDIT & REVERSE-ENGINEERING STUDY ONLY
+>
+> 🔹 **Purely Research Oriented:** This software, library integrations, and Telegram Bot framework are created strictly for **educational research, internal data auditing, and reverse-engineering exploration** of Unity asset files.  
+> 🔹 **Zero Tolerance for Misuse:** The creators and maintainers **do not endorse, encourage, or facilitate** piracy, copyright infringement, or unauthorized distribution of third-party proprietary assets.  
+> 🔹 **User Accountability:** You are solely responsible for ensuring you have full legal rights, licenses, and permissions before unpacking, editing, or repacking any binary asset files.
+
+<br>
+
+<div align="center">
+
+✦•······················•✦•······················•✦  
+**Crafted with ⚡ and passion by ArisuGpt**  
+*Telegram Community: [@hackinjectlab](https://t.me/hackinjectlab)*  
+✦•······················•✦•······················•✦
 
 </div>
