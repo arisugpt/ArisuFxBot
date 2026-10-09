@@ -6,11 +6,19 @@ Created & Developed by: ArisuGpt | Telegram: @hackinjectlab
 """
 
 import os
+import sys
 import shutil
 import time
 import threading
 import gc
 from typing import Dict, Optional, Any
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 import ArisuFxPy
 from config import SESSIONS_DIR, SESSION_TIMEOUT_SECONDS
 

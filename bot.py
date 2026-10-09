@@ -12,6 +12,15 @@ import sys
 import json
 import time
 import shutil
+
+# Ensure UTF-8 output encoding for console across all OS (Windows, Linux, Termux)
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 import telebot
 from telebot import types
 from tabulate import tabulate
