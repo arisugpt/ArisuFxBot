@@ -1,0 +1,15 @@
+sessions/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.bundle
+*.bin
+*.dat
+*.tmp
+*.assets
+*.unity3d
+.env
+venv/
+.idea/
+.vscode/
