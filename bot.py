@@ -394,11 +394,19 @@ def handle_action_info_table(call, session: UserSession):
         type_name = getattr(obj.type, "name", str(obj.type))
         name = ""
         try:
-            data = obj.read()
-            name = getattr(data, "name", getattr(data, "m_Name", ""))
+            if hasattr(obj, "peek_name"):
+                name = obj.peek_name() or ""
+            if not name:
+                data = obj.read()
+                name = getattr(data, "name", getattr(data, "m_Name", "")) or ""
         except Exception:
             name = ""
-        table_rows.append([idx, obj.path_id, type_name, name or "-", f"{obj.byte_size:,}"])
+            
+        name = str(name).strip()
+        if not name:
+            name = "Unnamed Asset"
+            
+        table_rows.append([idx, obj.path_id, type_name, name, f"{obj.byte_size:,}"])
         
     headers = ["#", "Path ID", "Type", "Name", "Size (bytes)"]
     table_str = tabulate(table_rows, headers=headers, tablefmt="grid")

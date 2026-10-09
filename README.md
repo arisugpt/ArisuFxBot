@@ -39,6 +39,27 @@ Powered by **[ArisuFxPy](https://github.com/arisugpt/ArisuFxPy)**.
 
 ---
 
+## ⚠️ Educational & Research Disclaimer
+
+> **Notice:** This tool and Telegram Bot are developed strictly for **educational, security research, and reverse-engineering study purposes**. The authors do not condone, encourage, or take responsibility for unauthorized use or modification of proprietary files. Always ensure you have legal authorization to analyze target assets.
+
+---
+
+## 🚀 Future Upgrades: Adding Image, Audio & Video Features
+
+If you want to upgrade this bot with advanced media extraction features (such as exporting textures to `.png`, dumping audio to `.wav`, or extracting 3D models), you can easily plug into the rich class system of **[ArisuFxPy](https://github.com/arisugpt/ArisuFxPy)**:
+
+- 🖼️ **Textures & Images**: Use `classes.Texture2D` (access `obj.read().image` to export PIL / PNG images).
+- 🎵 **Audio Clips**: Use `classes.AudioClip` (access `obj.read().samples` to extract raw audio streams).
+- 🎬 **Video & Cutscenes**: Use `classes.MovieTexture` or `classes.VideoClip`.
+- 🧊 **3D Meshes**: Use `classes.Mesh` to parse vertices, faces, and export 3D `.obj` models.
+
+> 📖 **Want to learn more & view full class references?**  
+> To explore the class structures, methods, and complete code samples, you must visit and read our official core library repository:  
+> 👉 **[Visit ArisuFxPy on GitHub](https://github.com/arisugpt/ArisuFxPy)**
+
+---
+
 ## 🔑 Bot Token Configuration
 
 You can easily configure your Telegram Bot Token in **two different ways**:
