@@ -845,6 +845,10 @@ if __name__ == "__main__":
         me = bot.get_me()
         print(f"[+] Connected to Telegram successfully as @{me.username} ({me.first_name})!")
         print(f"[+] Bot ID: {me.id}")
+        
+        # Remove any existing webhook so long polling works cleanly
+        bot.delete_webhook(drop_pending_updates=True)
+        print("[+] Webhook cleared. Ready for polling updates!")
         print("[*] Listening for user messages, uploads, and button clicks...")
         print("=" * 65)
         bot.infinity_polling(timeout=20, long_polling_timeout=20)
